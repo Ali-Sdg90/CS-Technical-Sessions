@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .color-picker {
+            display: none;
+        }
+
+        .color-label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #bd0808;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<input type="color" id="colorPicker" class="color-picker" />
+<label for="colorPicker" class="color-label"></label>
+
+<script>
+    const colorPicker = document.getElementById('colorPicker');
+    const colorLabel = document.querySelector('.color-label');
+
+    colorPicker.addEventListener('input', function() {
+        colorLabel.style.backgroundColor = colorPicker.value;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"
+        />
+        <style>
+            #color-picker {
+                margin: 20px;
+            }
+        </style>
+        <title>Color Picker</title>
+    </head>
+    <body>
+        <div id="color-picker"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+        <script>
+            const pickr = Pickr.create({
+                el: "#color-picker",
+                theme: "nano", // Use the 'nano' theme for a compact design
+
+                default: "#1BCEB3",
+
+                components: {
+                    // Main components
+                    preview: true,
+                    // opacity: true,
+                    hue: true,
+
+                    // Input / output Options
+                    interaction: {
+                        hex: true,
+                        // rgba: true,
+                        // hsla: true,
+                        // hsva: true,
+                        // cmyk: true,
+                        input: true,
+                        // clear: true,
+                        // save: true
+                    },
+                },
+            });
+
+            pickr.on("change", (color) => {
+                const hexColor = color.toHEXA().toString();
+                console.log(hexColor);
+            });
+        </script>
+    </body>
+</html>
